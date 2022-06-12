@@ -1,0 +1,16 @@
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\bin\Debug\net5.0\byte-maker.exe
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\bin\Debug\net5.0\byte-maker.deps.json
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\bin\Debug\net5.0\byte-maker.runtimeconfig.json
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\bin\Debug\net5.0\byte-maker.runtimeconfig.dev.json
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\bin\Debug\net5.0\byte-maker.dll
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\bin\Debug\net5.0\ref\byte-maker.dll
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\bin\Debug\net5.0\byte-maker.pdb
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.csprojAssemblyReference.cache
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.GeneratedMSBuildEditorConfig.editorconfig
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.AssemblyInfoInputs.cache
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.AssemblyInfo.cs
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.csproj.CoreCompileInputs.cache
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.dll
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\ref\byte-maker.dll
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.pdb
+D:\Repository\Projects\Coding\General\Character-Encoding\byte-maker\obj\Debug\net5.0\byte-maker.genruntimeconfig.cache
