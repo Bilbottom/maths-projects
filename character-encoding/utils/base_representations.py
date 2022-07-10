@@ -1,7 +1,10 @@
 """
 Converting between base representations
 """
-from dicts import hex_bin_dict
+import math
+
+from .dicts import hex_bin_dict
+from .string_methods import chunkify
 
 
 def dec_to_base(base_10_integer: int, new_base: int) -> int:
@@ -35,7 +38,7 @@ def dec_to_base(base_10_integer: int, new_base: int) -> int:
         ))
 
 
-def bin_to_hex(bin_string_in):
+def bin_to_hex_old(bin_string_in):
     sig_bin = bin_string_in.replace(' ', '').lstrip('0')
     bin_length = 8 * ((len(sig_bin) // 8) + (len(sig_bin) % 8 > 0))  # round up to nearest 8
     bin_string = sig_bin.zfill(bin_length)
@@ -45,6 +48,26 @@ def bin_to_hex(bin_string_in):
         space = ' ' * ((i % 2) == 0)
         ret_string += space + hex_bin_dict.inverse[nibble]
     return ret_string[1:]
+
+
+def bin_to_hex(binary_repr: str) -> str:
+    """Convert a binary string into its corresponding hexadecimal string representation."""
+    def ceil_to_nearest(number: int, multiple: int) -> int:
+        """https://datagy.io/python-round-to-multiple/"""
+        return multiple * math.ceil(number / multiple)
+
+    def binary_to_nibbles(bin_repr: str) -> list[str]:
+        """Convert a binary string into a list of nibbles."""
+        if bin_repr == '0':
+            return ['0000']
+
+        reduced_binary = bin_repr.replace(' ', '').lstrip('0')
+        return chunkify(
+            text=reduced_binary.zfill(ceil_to_nearest(len(reduced_binary), 8)),
+            chunk_size=4
+        )
+
+    return ''.join([hex_bin_dict.inverse[nibble] for nibble in binary_to_nibbles(binary_repr)])
 
 
 def hex_to_bin(hex_string_in, nibbles=-1):
@@ -66,5 +89,8 @@ def bin_to_dec(binary: str) -> int:
 
 
 if __name__ == '__main__':
-    print(f'{dec_to_base(38, 2)=}', f'{38:b}')
-    print(f'{dec_to_base(13, 3)=}')
+    print(f"{bin_to_hex_old('01 1100')=}")
+    print(f"{bin_to_hex('01 1100')=}")
+    print(f"{bin_to_hex('0')=}")
+    # print(f'{dec_to_base(38, 2)=}', f'{38:b}')
+    # print(f'{dec_to_base(13, 3)=}')
