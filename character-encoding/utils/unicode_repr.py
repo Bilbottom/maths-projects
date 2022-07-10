@@ -1,5 +1,5 @@
 import dicts
-from hex_bin_repr import bin_to_hex
+from base_representations import bin_to_hex
 
 
 ###
@@ -32,22 +32,19 @@ max_byte_dict = {
 
 
 def _get_utf8_bytes_required(sig_digits):
-    for x in max_byte_dict:
-        if sig_digits <= max_byte_dict[x]:
-            return x
-    return 0
+    return next((x for x in max_byte_dict if sig_digits <= max_byte_dict[x]), 0)
 
 
 def _parse_to_byte(sig_bin_string, utf8_bytes):
     parse_string = sig_bin_string.zfill(max_byte_dict[utf8_bytes])
     if utf8_bytes == 1:
-        return '0' + parse_string
+        return f'0{parse_string}'
     elif utf8_bytes == 2:
-        return '110' + parse_string[0:5] + ' 10' + parse_string[5:11]
+        return f'110{parse_string[:5]} 10{parse_string[5:11]}'
     elif utf8_bytes == 3:
-        return '1110' + parse_string[0:4] + ' 10' + parse_string[4:10] + ' 10' + parse_string[10:16]
+        return f'1110{parse_string[:4]} 10{parse_string[4:10]} 10{parse_string[10:16]}'
     elif utf8_bytes == 4:
-        return '11110' + parse_string[0:3] + ' 10' + parse_string[3:9] + ' 10' + parse_string[9:15] + ' 10' + parse_string[15:21]
+        return f'11110{parse_string[:3]} 10{parse_string[3:9]} 10{parse_string[9:15]} 10{parse_string[15:21]}'
 
 
 def bin_to_utf8(bin_string):

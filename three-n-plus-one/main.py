@@ -8,10 +8,8 @@ def collatz(term: int):
     while term > 1:
         print(term, end=' ')
         if term % 2:
-            # n is odd
             term = 3 * term + 1
         else:
-            # n is even
             term //= 2
     print(1, end='')
 

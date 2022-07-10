@@ -15,7 +15,7 @@ def ack(m: int, n: int) -> int:
 
 
 def main():
-    x, y = 6, 6
+    x, y = 4, 4
     for i, j in itertools.product(range(x), range(y)):
         print(f'ackermann({i}, {j}) = {ack(i, j)}')
 

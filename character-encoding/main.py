@@ -1,7 +1,6 @@
-from hex_bin_repr import hex_to_bin
-from unicode_repr import bin_to_utf8
-from unicode_repr import bin_to_utf8_hex
-from dicts import hex_bin_dict
+from utils.base_representations import hex_to_bin
+from utils.unicode_repr import bin_to_utf8, bin_to_utf8_hex
+from utils.dicts import hex_bin_dict
 
 
 ###
@@ -37,12 +36,13 @@ def check_digits(string):
 
 def unicode_hex_to_utf8_hex(unicode_hex):
     hex_string = unicode_hex
-    if unicode_hex[0:2].upper() in ('U+', '\\X', '0X', 'H&'):
+    if unicode_hex[:2].upper() in ('U+', '\\X', '0X', 'H&'):
         hex_string = unicode_hex[2:]
     if check_digits(hex_string) != 0:
-        raise ValueError('Unexpected character in the hex string ' + hex_string)
+        raise ValueError(f'Unexpected character in the hex string {hex_string}')
 
     return bin_to_utf8_hex(hex_to_bin(hex_string))
 
 
-print(unicode_hex_to_utf8_hex('U+03C0'))  # Greek small letter pi
+if __name__ == '__main__':
+    print(unicode_hex_to_utf8_hex('U+03C0'))  # Greek small letter pi

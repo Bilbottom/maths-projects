@@ -2,7 +2,7 @@ import json
 from bidict import bidict
 
 
-with open('dec_hex.json', 'r') as infile:
+with open('utils/mappings/dec_hex.json', 'r') as infile:
     dec_hex_map = bidict(json.load(infile))
 
 
@@ -46,13 +46,14 @@ def hex_to_dec(hex_string):
     return str(temp)
 
 
-# print(hex_to_dec('0'))
-# print(dec_to_hex('0'))
-#
-# print(hex_to_dec('F423F'))
-# print(dec_to_hex('999999'))
+if __name__ == '__main__':
+    print(f"{hex_to_dec('0')=}")
+    print(f"{dec_to_hex('0')=}")
 
-# print(hex_to_dec('10FFFF'))
+    print(f"{hex_to_dec('F423F')=}")
+    print(f"{dec_to_hex('999999')=}")
 
-# print(dec_to_hex(str((2 ** 21) - 1)))
-# print((2 ** 21) - 1)
+    print(f"{hex_to_dec('10FFFF')=}")
+
+    print(f'{((2 ** 21) - 1)=}')
+    print(f"{dec_to_hex(str((2 ** 21) - 1))=}")

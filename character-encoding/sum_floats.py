@@ -37,20 +37,20 @@ def write_array(bin_list):
     return return_string
 
 
-run_length = 64
-binary_values = get_bin_value_array(run_length)
-array_01 = get_bin_array_0_1(run_length)
-array_02 = get_bin_array_0_2(run_length)
+if __name__ == '__main__':
+    run_length = 64
+    binary_values = get_bin_value_array(run_length)
+    array_01 = get_bin_array_0_1(run_length)
+    array_02 = get_bin_array_0_2(run_length)
 
-product_01 = [a * b for a, b in zip(array_01, binary_values)]
-product_02 = [a * b for a, b in zip(array_02, binary_values)]
+    product_01 = [a * b for a, b in zip(array_01, binary_values)]
+    product_02 = [a * b for a, b in zip(array_02, binary_values)]
 
-sum_products = sum(product_01) + sum(product_02)
+    sum_products = sum(product_01) + sum(product_02)
 
-
-print(f'{sum_products:32f}')
-# print(write_array(array_01))
-# print(write_array(array_02))
-# print(binary_values)
-# print(product_01)
-# print(product_02)
+    print(f'{sum_products:32f}')
+    # print(write_array(array_01))
+    # print(write_array(array_02))
+    # print(binary_values)
+    # print(product_01)
+    # print(product_02)

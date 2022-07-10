@@ -67,12 +67,8 @@ def fibonacci_timer(number):
     print("Daniel's:", timeit.timeit(time_fibonacci_dan, number=number))
 
 
-def main_fibonacci():
-    fibonacci_timer(100)
-
-
 def main():
-    main_fibonacci()
+    fibonacci_timer(100)
 
 
 if __name__ == '__main__':
