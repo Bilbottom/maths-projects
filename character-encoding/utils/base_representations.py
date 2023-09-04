@@ -71,16 +71,13 @@ def bin_to_hex(binary_repr: str) -> str:
 
 
 def hex_to_bin(hex_string_in, nibbles=-1):
-    ret_string = ''
     if nibbles != -1:
         assert nibbles >= len(hex_string_in)
         hex_string = '0' * (nibbles - len(hex_string_in)) + hex_string_in
     else:
         hex_string = hex_string_in
 
-    for c in hex_string:
-        ret_string += ' ' + hex_bin_dict[c]
-
+    ret_string = ''.join(f' {hex_bin_dict[c]}' for c in hex_string)
     return ret_string[1:]
 
 
