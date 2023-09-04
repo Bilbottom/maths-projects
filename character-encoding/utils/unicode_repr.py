@@ -50,10 +50,7 @@ def _parse_to_byte(sig_bin_string, utf8_bytes):
 def bin_to_utf8(bin_string):
     sig_bin = bin_string.replace(' ', '').lstrip('0')
     utf8_bytes = _get_utf8_bytes_required(len(sig_bin))
-    if utf8_bytes < 1:
-        return None
-    # return sig_bin, utf8_bytes
-    return _parse_to_byte(sig_bin, utf8_bytes)
+    return None if utf8_bytes < 1 else _parse_to_byte(sig_bin, utf8_bytes)
 
 
 def bin_to_utf8_hex(bin_string):

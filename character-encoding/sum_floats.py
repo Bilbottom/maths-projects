@@ -2,12 +2,10 @@
 def get_bin_array_0_1(bin_len):
     bin_list = []
     for i in range(bin_len + 1):
-        if i == 0:
+        if i == 0 or i % 4 not in [0, 3]:
             bin_list.append(0)
-        elif i % 4 in [0, 3]:
-            bin_list.append(1)
         else:
-            bin_list.append(0)
+            bin_list.append(1)
     return bin_list
 
 
@@ -22,10 +20,8 @@ def get_bin_array_0_2(bin_len):
 
 
 def get_bin_value_array(bin_len):
-    bin_list = []
     factor = (10 ** (bin_len - 1))
-    for i in range(bin_len):
-        bin_list.append((0.5 ** i) * factor)
+    bin_list = [(0.5 ** i) * factor for i in range(bin_len)]
     bin_list.pop(0)
     return bin_list
 

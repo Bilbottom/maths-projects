@@ -28,10 +28,7 @@ def print_all_wiki_examples():
 
 
 def check_digits(string):
-    for i in string:
-        if i not in hex_bin_dict:
-            return -1
-    return 0
+    return next((-1 for i in string if i not in hex_bin_dict), 0)
 
 
 def unicode_hex_to_utf8_hex(unicode_hex):
